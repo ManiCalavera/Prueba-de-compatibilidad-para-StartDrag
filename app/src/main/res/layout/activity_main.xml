@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#00A1B6"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:hint="@string/txt_view_estado"
+        android:textSize="75dp"
+        android:id="@+id/txt_drag"
+        />
+
+    <ImageView
+        android:id="@+id/destino1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:src="@drawable/ic_launcher_background" />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+
+        >
+
+        <ImageButton
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+
+            />
+        <ImageButton
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/btn1"
+            />
+        <ImageButton
+            android:id="@+id/btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/btn2"
+            />
+        <ImageButton
+            android:id="@+id/btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/btn3"
+            />
+
+
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="69dp"
+
+        android:gravity="bottom">
+
+        <ImageView
+            android:id="@+id/destino1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:src="@drawable/ic_launcher_background" />
+
+        <ImageView
+            android:id="@+id/destino2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_toRightOf="@id/destino1"
+            android:gravity="center"
+            android:src="@drawable/ic_launcher_background" />
+
+
+        <ImageView
+            android:id="@+id/destino3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_toRightOf="@id/destino2"
+            android:gravity="center"
+            android:src="@drawable/ic_launcher_background" />
+
+
+        <ImageView
+            android:id="@+id/destino4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_toRightOf="@id/destino3"
+            android:gravity="center"
+            android:src="@drawable/ic_launcher_background" />
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+
