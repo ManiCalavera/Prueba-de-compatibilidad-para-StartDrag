@@ -17,7 +17,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnTouchListener, View.OnDragListener {
     public ImageView destino1, destino2, destino3, destino4;
     public ImageButton btn1, btn2, btn3, btn4;
-    private TextView txt_drag;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         destino2 = findViewById(R.id.destino2);
         destino3 = findViewById(R.id.destino3);
         destino4 = findViewById(R.id.destino4);
-        txt_drag = findViewById(R.id.txt_drag);
+
 
 
         btn1.setOnTouchListener(this);
@@ -51,13 +51,18 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
         switch (event.getAction()) {
 
+            case DragEvent.ACTION_DRAG_STARTED:
+
+                Toast.makeText(this, "Empezó", Toast.LENGTH_LONG).show();
+
+
             case DragEvent.ACTION_DRAG_ENTERED:
                 Toast.makeText(MainActivity.this, "Salí wacho", Toast.LENGTH_LONG).show();
-                txt_drag.setText("Entró al cuadradito");
+
 
             case DragEvent.ACTION_DROP:
 
-                txt_drag.setText("Se quedó en el cuadradito");
+
                 Toast.makeText(this, "entró",Toast.LENGTH_SHORT).show();
 
 

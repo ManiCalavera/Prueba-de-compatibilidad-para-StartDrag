@@ -10,16 +10,6 @@
     android:background="#00A1B6"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:hint="@string/txt_view_estado"
-        android:textSize="75dp"
-        android:id="@+id/txt_drag"
-        />
-
-   
 
     <RelativeLayout
         android:layout_width="wrap_content"
