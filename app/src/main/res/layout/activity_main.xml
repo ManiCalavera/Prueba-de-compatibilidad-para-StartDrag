@@ -1,111 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<RelativeLayout
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/center"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:background="#00A1B6"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity" >
 
+    <LinearLayout
+        android:id="@+id/pinkLayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="#FF8989"
+        android:orientation="vertical" >
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp"
-
-        >
-
-        <ImageButton
-            android:id="@+id/btn1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"
-            android:layout_centerInParent="true"
-            android:layout_alignParentLeft="true"
-
-            />
-        <ImageButton
-            android:id="@+id/btn2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"
-            android:layout_centerInParent="true"
-            android:layout_toRightOf="@id/btn1"
-            />
-        <ImageButton
-            android:id="@+id/btn3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"
-            android:layout_centerInParent="true"
-            android:layout_toRightOf="@id/btn2"
-            />
-        <ImageButton
-            android:id="@+id/btn4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"
-            android:layout_centerInParent="true"
-            android:layout_toRightOf="@id/btn3"
-            />
-
-
-
-
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="69dp"
-
-        android:gravity="bottom">
-
-        <ImageView
-            android:id="@+id/destino1"
-            android:layout_width="100dp"
+        <TextView
+            android:id="@+id/textView1"
+            android:background="@color/colorPrimaryDark"
+            android:layout_width="300dp"
             android:layout_height="100dp"
             android:gravity="center"
-            android:src="@drawable/ic_launcher_background" />
+            android:text="texto" />
+    </LinearLayout>
 
-        <ImageView
-            android:id="@+id/destino2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_toRightOf="@id/destino1"
-            android:gravity="center"
-            android:src="@drawable/ic_launcher_background" />
+    <LinearLayout
+        android:id="@+id/yellowLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:background="#FFCC00"
+        android:orientation="vertical" >
+    </LinearLayout>
 
-
-        <ImageView
-            android:id="@+id/destino3"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_toRightOf="@id/destino2"
-            android:gravity="center"
-            android:src="@drawable/ic_launcher_background" />
-
-
-        <ImageView
-            android:id="@+id/destino4"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_toRightOf="@id/destino3"
-            android:gravity="center"
-            android:src="@drawable/ic_launcher_background" />
-    </RelativeLayout>
-
-</RelativeLayout>
-
-
-
-
+</LinearLayout>
