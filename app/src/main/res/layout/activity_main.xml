@@ -8,12 +8,12 @@
     android:orientation="vertical">
 
     <Button
+        android:id="@+id/btn_check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Check"
         android:textSize="24sp"
-        android:id="@+id/btn_check"
+        android:text="@string/boton"
         />
 
     <LinearLayout
@@ -120,12 +120,12 @@
 
             >
 
-            <LinearLayout
+        <LinearLayout
             android:layout_width="1dp"
             android:layout_height="100dp"
             android:background="#B64343"
             android:id="@+id/linear1"
-                android:layout_alignParentLeft="true"
+            android:layout_alignParentLeft="true"
             android:visibility="invisible"
             android:orientation="horizontal" />
 

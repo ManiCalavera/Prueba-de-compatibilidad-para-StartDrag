@@ -1,6 +1,7 @@
 package com.example.stardrag;
 
 
+import android.Manifest;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.*;
@@ -66,7 +67,8 @@ public class MainActivity extends Activity implements OnTouchListener,OnDragList
 
 
 
-        //btn_check=findViewById(R.id.btn_check)
+        btn_check=findViewById(R.id.btn_check);
+        btn_check.setOnTouchListener(this);
 
         tv1= findViewById(R.id.tv1);
         tv1.setOnTouchListener(this);
@@ -88,52 +90,36 @@ public class MainActivity extends Activity implements OnTouchListener,OnDragList
 
 
 
-/*
-        arrayIconosA[0]=tv1.getId()
-        arrayIconosA[1]=tv2.getId()
-        arrayIconosA[2]=tv3.getId()
-        arrayIconosA[3]=tv4.getId()
-        arrayIconosA[4]=tv5.getId()
-        arrayIconosA[5]=tv6.getId()
-        arrayIconosA[6]=tv7.getId()
-        arrayIconosA[7]=tv8.getId()
 
-
-
-        btn_check.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean gano = true;
-                //recorro los 2 array y comparo el que arme con el arrastre contra el que yo tenia guardado.
-                if (linear1.onViewAdded(view);==arrayIconosA[0])
-                }
-                if(gano){
-                    Toast.makeText(MainActivity.this, "Gano", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(MainActivity.this, "Perdio", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });*/
 
 
 
 
 
     }
+
     public boolean onTouch(View view, MotionEvent motionEvent) {
         switch (motionEvent.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
-                view.startDrag(null, shadowBuilder, view, 0);
-                view.setVisibility(View.INVISIBLE);
-                break;
-
+                if (view.getId() != btn_check.getId()) {
+                    DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
+                    view.startDrag(null, shadowBuilder, view, 0);
+                    view.setVisibility(View.INVISIBLE);
+                }
+                else {
+                    if ((linear9.getChildCount()==0)|(linear2.getChildCount()==0)|(linear3.getChildCount()==0)|(linear4.getChildCount()==0)|(linear5.getChildCount()==0)|(linear6.getChildCount()==0)|(linear7.getChildCount()==0)|(linear8.getChildCount()==0)) {
+                        Toast.makeText(MainActivity.this, "UPs! te faltó ubicar todas las imágenes!", Toast.LENGTH_SHORT).show();
+                        //btn_check.setText(R.string.txt_view_estado);
+                    }
+                }
+            break;
 
 
         }
 
         return true;
+
+
     }
     public boolean onDrag(View layoutview, DragEvent event) {
         /*boolean usado;
@@ -165,7 +151,6 @@ public class MainActivity extends Activity implements OnTouchListener,OnDragList
                 break;
 
             case DragEvent.ACTION_DRAG_ENDED:
-                Toast.makeText(this,"f",Toast.LENGTH_SHORT).show();
                 view.setVisibility(View.VISIBLE);
                 break;
 
