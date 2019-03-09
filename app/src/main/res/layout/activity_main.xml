@@ -1,36 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/center"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Check"
+        android:textSize="24sp"
+        android:id="@+id/btn_check"
+        />
 
     <LinearLayout
-        android:id="@+id/pinkLayout"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="#FF8989"
-        android:orientation="vertical" >
-
+        android:layout_height="200dp"
+        android:layout_gravity="bottom"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:weightSum="160">
         <TextView
-            android:id="@+id/textView1"
-            android:background="@color/colorPrimaryDark"
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="trencito"
+            android:textSize="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center"
+            android:id="@+id/tv1"
+            android:layout_weight="20"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="trencito"
+            android:textSize="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center"
+            android:id="@+id/tv2"
+            android:layout_weight="20"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="trencito"
+            android:textSize="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center"
+            android:id="@+id/tv3"
+            android:layout_weight="20"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="trencito"
+            android:textSize="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="20"
+            android:id="@+id/tv4"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="trencito"
+            android:textSize="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="20"
+            android:id="@+id/tv5"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="trencito"
+            android:textSize="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="20"
+            android:id="@+id/tv6"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="trencito"
+            android:textSize="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="20"
+            android:id="@+id/tv7"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="trencito"
+            android:textSize="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="20"
+            android:id="@+id/tv8"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+
+        <RelativeLayout
+
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_centerInParent="true"
+
+
+
+
+
+            >
+
+            <LinearLayout
+            android:layout_width="1dp"
             android:layout_height="100dp"
-            android:gravity="center"
-            android:text="texto" />
-    </LinearLayout>
+            android:background="#B64343"
+            android:id="@+id/linear1"
+                android:layout_alignParentLeft="true"
+            android:visibility="invisible"
+            android:orientation="horizontal" />
 
-    <LinearLayout
-        android:id="@+id/yellowLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="250dp"
-        android:background="#FFCC00"
-        android:orientation="vertical" >
-    </LinearLayout>
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_toRightOf="@id/linear1"
+            android:id="@+id/linear2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:background="#CF4AB8" />
+
+        <LinearLayout
+            android:layout_toRightOf="@id/linear2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/linear3"
+            android:background="#A3799C"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:layout_toRightOf="@id/linear3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/linear4"
+            android:orientation="horizontal"
+            android:background="#ED2F36AD"
+            />
+
+        <LinearLayout
+            android:layout_toRightOf="@id/linear4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/linear5"
+            android:orientation="horizontal"
+            android:background="#ED6AAD2F"
+            />
+            <LinearLayout
+                android:layout_toRightOf="@id/linear5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/linear6"
+                android:orientation="horizontal"
+                android:background="#2196F3"
+                />
+            <LinearLayout
+                android:layout_toRightOf="@id/linear6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/linear7"
+                android:orientation="horizontal"
+                android:background="#F321B8"
+                />
+            <LinearLayout
+                android:layout_toRightOf="@id/linear7"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/linear8"
+                android:orientation="horizontal"
+                android:background="#014C55"
+                />
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:layout_toRightOf="@id/linear8"
+                android:id="@+id/linear9"
+                android:background="#CDDC39"
+
+                />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:layout_toRightOf="@id/linear9"
+                android:id="@+id/linear10"
+                android:visibility="invisible"
+
+                />
+
+
+
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+</RelativeLayout>
