@@ -130,13 +130,15 @@
             android:orientation="horizontal" />
 
 
-        <LinearLayout
-            android:layout_toRightOf="@id/linear1"
-            android:id="@+id/linear2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:orientation="horizontal"
-            android:background="#CF4AB8" />
+            <LinearLayout
+                android:id="@+id/linear2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="3dp"
+                android:layout_toRightOf="@id/linear1"
+                android:background="#CF4AB8"
+                android:orientation="horizontal" />
 
         <LinearLayout
             android:layout_toRightOf="@id/linear2"

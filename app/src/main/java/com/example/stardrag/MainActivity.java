@@ -2,6 +2,7 @@ package com.example.stardrag;
 
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.*;
@@ -17,10 +18,6 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity implements OnTouchListener,OnDragListener{
     public Button btn_check;
-    private int[] arrayDestinoA = new int[4];
-    private int[] arrayDestinoO = new int[4];
-    private int[] arrayIconosA = new int[4];
-    private int[] arrayIconosO = new int[4];
     private TextView tv1;
     private TextView tv2;
     private TextView tv3;
@@ -29,7 +26,6 @@ public class MainActivity extends Activity implements OnTouchListener,OnDragList
     private TextView tv6;
     private TextView tv7;
     private TextView tv8;
-    private LinearLayout linear1;
     private LinearLayout linear2;
     private LinearLayout linear3;
     private LinearLayout linear4;
@@ -38,15 +34,15 @@ public class MainActivity extends Activity implements OnTouchListener,OnDragList
     private LinearLayout linear7;
     private LinearLayout linear8;
     private LinearLayout linear9;
-
+    private LinearLayout [] linears= new LinearLayout[4];
+    private int[] tvs= new int [4];
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //linear1 = findViewById(R.id.linear1)
-        //linear1.setOnDragListener(this);
+
         linear2 = findViewById(R.id.linear2);
         linear2.setOnDragListener(this);
         linear3 = findViewById(R.id.linear3);
@@ -64,6 +60,18 @@ public class MainActivity extends Activity implements OnTouchListener,OnDragList
         linear9 = findViewById(R.id.linear9);
         linear9.setOnDragListener(this);
 
+
+
+
+        tvs [0]= (R.id.tv5);
+        tvs [1]= (R.id.tv6);
+        tvs [2]= (R.id.tv7);
+        tvs [3]= (R.id.tv8);
+
+        linears [0]= (LinearLayout) linear2;
+        linears [1]= (LinearLayout) linear3;
+        linears [2]= (LinearLayout) linear4;
+        linears [3]= (LinearLayout) linear5;
 
 
 
@@ -98,6 +106,7 @@ public class MainActivity extends Activity implements OnTouchListener,OnDragList
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     public boolean onTouch(View view, MotionEvent motionEvent) {
         switch (motionEvent.getAction()) {
             case MotionEvent.ACTION_DOWN:
@@ -111,30 +120,35 @@ public class MainActivity extends Activity implements OnTouchListener,OnDragList
                         Toast.makeText(MainActivity.this, "UPs! te faltó ubicar todas las imágenes!", Toast.LENGTH_SHORT).show();
                         //btn_check.setText(R.string.txt_view_estado);
                     }
+                    else{
+                        int i;
+                        i=0;
+                        boolean gano;
+                        gano = true;
+                        while ((gano)&(i<4)) {
+                            if (linears[i].getChildAt(0).getId() == tvs[0]){// | (linears[i].getChildAt(0).getId() == tvs[1]) | (linears[i].getChildAt(0).getId() == tvs[2]) | (linears[i].getChildAt(0).getId() == tvs[3])) {
+                                Toast.makeText(MainActivity.this, "UPs! Te equivocaste! inténtalo de nuevo", Toast.LENGTH_SHORT).show();
+                                gano = false;
+                                i = i + 1;
+                            }
+                        }
+                        if (gano){
+                            Toast.makeText(MainActivity.this,"Ganaste!!!!",Toast.LENGTH_SHORT).show();
+                        }
+                    }
                 }
             break;
-
-
         }
-
-        return true;
-
-
+    return true;
     }
     public boolean onDrag(View layoutview, DragEvent event) {
-        /*boolean usado;
-        int e;
-        e=0;
-        usado=true;*/
         View view = (View) event.getLocalState();
         LinearLayout container = (LinearLayout) layoutview;
         switch (event.getAction()) {
 
 
             case DragEvent.ACTION_DROP:
-                //Toast.makeText(this, "Se solto", Toast.LENGTH_SHORT).show();
 
-                //f (!layoutview.dispatchDragEvent(event)){
                 if (container.getChildCount() == 0) {
 
                     ViewGroup owner = (ViewGroup) view.getParent();
@@ -143,24 +157,14 @@ public class MainActivity extends Activity implements OnTouchListener,OnDragList
                     container.addView(view);
                     view.setVisibility(View.VISIBLE);
                 }
-
-
-            // }
-
-
                 break;
 
             case DragEvent.ACTION_DRAG_ENDED:
                 view.setVisibility(View.VISIBLE);
                 break;
-
         }
-
-                return true;
-
+    return true;
     }
-
-
 }
 
 
