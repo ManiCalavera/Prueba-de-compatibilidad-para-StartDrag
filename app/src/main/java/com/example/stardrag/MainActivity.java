@@ -121,17 +121,25 @@ public class MainActivity extends Activity implements OnTouchListener,OnDragList
                         //btn_check.setText(R.string.txt_view_estado);
                     }
                     else{
-                        int i;
-                        i=0;
+                        //int u;
+                        //u=0;
                         boolean gano;
                         gano = true;
-                        while ((gano)&(i<4)) {
-                            if (linears[i].getChildAt(0).getId() == tvs[0]){// | (linears[i].getChildAt(0).getId() == tvs[1]) | (linears[i].getChildAt(0).getId() == tvs[2]) | (linears[i].getChildAt(0).getId() == tvs[3])) {
+                        for (Integer i = 0; i<4; i++) {
+                            if ((linears[i].getChildAt(0).getId() == tvs[0]) || (linears[i].getChildAt(0).getId() == tvs[1]) || (linears[i].getChildAt(0).getId() == tvs[2]) || (linears[i].getChildAt(0).getId() == tvs[3])) {
                                 Toast.makeText(MainActivity.this, "UPs! Te equivocaste! inténtalo de nuevo", Toast.LENGTH_SHORT).show();
-                                gano = false;
-                                i = i + 1;
+                                gano= false;
+                                //i = i + 1;
                             }
                         }
+
+                        /*while ((u<4)&&(gano)) {
+                            if (linears[u].getChildAt(0).getId() == tv1.getId()) {// | (linears[i].getChildAt(0).getId() == tvs[1]) | (linears[i].getChildAt(0).getId() == tvs[2]) | (linears[i].getChildAt(0).getId() == tvs[3])) {
+                                Toast.makeText(MainActivity.this, "UPs! Te equivocaste! inténtalo de nuevo", Toast.LENGTH_SHORT).show();
+                                gano= false;
+                                u++;
+                            }
+                        }*/
                         if (gano){
                             Toast.makeText(MainActivity.this,"Ganaste!!!!",Toast.LENGTH_SHORT).show();
                         }
